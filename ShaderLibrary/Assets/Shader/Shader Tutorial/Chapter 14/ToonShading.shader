@@ -6,7 +6,7 @@
 		_Color ("Color", Color) = (1.0, 1.0, 1.0, 1.0)
 		_SpecularColor ("SpecularColor", Color) = (1.0, 1.0, 1.0, 1.0)
 		_RimColor ("RimColor", Color) = (1.0, 1.0, 1.0, 1.0)
-		_ShadowThreshold ("ShadowThreshold", Range(-1.0, 1.0)) = 0.0
+		_ShadowThreshold ("ShadowThreshold", Range(-1.0, 1.0)) = 0.2
 		_ShadowBrightness ("ShadowBrightness", Range(0.0, 1.0)) = 0.5
 		_RimThreshold ("RimThreshold", Range(0.0, 1.0)) = 0.8
 		_RimPower ("RimPower", Range(0.0, 32)) = 2.0

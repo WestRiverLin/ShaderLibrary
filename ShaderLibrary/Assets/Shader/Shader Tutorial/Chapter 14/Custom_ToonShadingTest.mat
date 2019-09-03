@@ -30,7 +30,7 @@ Material:
     - _Seep: 0
     - _ShadowBrightness: 0.6
     - _ShadowStrength: 0.5
-    - _ShadowThreshold: 0
+    - _ShadowThreshold: 0.17
     - _Softness: 1
     - _SpecularScale: 0
     - _SpecularThreshold: 0
