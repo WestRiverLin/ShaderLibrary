@@ -13,6 +13,7 @@
 		_Seep ("Seep", Range(0.0, 0.5)) = 0.25
 		_Softness ("Softness", Range(0.0, 3.0)) = 1.0
 		_SpecularScale("SpecularScale", Range(0.0, 0.1)) = 0.005
+		_AmbientStrength ("AmbientStrength", Range(0.0, 1.0)) = 0.0
 
 		_Outline ("Outline", Range(0.0, 0.01)) = 0.01
 		_OutlineColor ("OutlineColor", Color) = (0.0, 0.0, 0.0, 1.0)
@@ -106,6 +107,7 @@
 			fixed _ShadowThreshold;
 			fixed _ShadowBrightness;
 			fixed _RimThreshold;
+			fixed _AmbientStrength;
 			half _RimPower;
 			fixed _Seep;
 			fixed _Softness;
@@ -134,7 +136,7 @@
 				// sample the texture
 				fixed4 col = tex2D(_MainTex, i.uv); 
 				fixed4 albedo = col;
-				fixed4 ambient = UNITY_LIGHTMODEL_AMBIENT;
+				fixed4 ambient = UNITY_LIGHTMODEL_AMBIENT*_AmbientStrength;
 				fixed diff = dot(worldNormal, worldLightDir);
 				fixed spec = dot(worldNormal, worldHalfDir);
 				fixed w = fwidth(spec) * 2.0;
