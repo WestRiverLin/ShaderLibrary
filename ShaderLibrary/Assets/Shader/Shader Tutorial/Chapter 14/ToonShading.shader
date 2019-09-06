@@ -23,55 +23,10 @@
 		Tags { "RenderType"="Opaque" }
 		LOD 100
 
+		//上色
 		Pass
 		{
-			Cull Front
-			CGPROGRAM
-			#pragma vertex vert
-			#pragma fragment frag
-			// make fog work
-			#pragma multi_compile_fog
-			#include "UnityCG.cginc"
-
-			struct appdata
-			{
-				float4 vertex : POSITION;
-				float2 uv : TEXCOORD0;
-				float3 normal : NORMAL;
-				
-			};
-
-			struct v2f
-			{
-				float2 uv : TEXCOORD0;
-				float3 worldNormal : TEXCOORD1;
-				float3 worldPos : TEXCOORD2;
-				UNITY_FOG_COORDS(3)
-				float4 vertex : SV_POSITION;
-			};
-			half _Outline;
-			fixed4 _OutlineColor;
-			v2f vert (appdata v) {
-				v2f o;
-
-				float4 pos = mul(UNITY_MATRIX_MV, v.vertex); 
-				float3 normal = mul((float3x3)UNITY_MATRIX_IT_MV, v.normal);  
-				normal.z = -0.5;
-				pos = pos + float4(normalize(normal), 0) * _Outline;
-				o.vertex = mul(UNITY_MATRIX_P, pos);
-
-				return o;
-			}
-
-			float4 frag(v2f i) : SV_Target { 
-				return float4(_OutlineColor.rgb, 1);               
-			}
-			ENDCG
-		}
-
-
-		Pass
-		{
+			Cull Back
 			Tags { "LightMode"="ForwardBase" }
 			CGPROGRAM
 			#pragma vertex vert
@@ -156,5 +111,55 @@
 			}
 			ENDCG
 		}
+
+		// //描边
+		// Pass
+		// {
+		// 	Cull Front
+		// 	CGPROGRAM
+		// 	#pragma vertex vert
+		// 	#pragma fragment frag
+		// 	// make fog work
+		// 	#pragma multi_compile_fog
+		// 	#include "UnityCG.cginc"
+
+		// 	struct appdata
+		// 	{
+		// 		float4 vertex : POSITION;
+		// 		float2 uv : TEXCOORD0;
+		// 		float3 normal : NORMAL;
+				
+		// 	};
+
+		// 	struct v2f
+		// 	{
+		// 		float2 uv : TEXCOORD0;
+		// 		float3 worldNormal : TEXCOORD1;
+		// 		float3 worldPos : TEXCOORD2;
+		// 		UNITY_FOG_COORDS(3)
+		// 		float4 vertex : SV_POSITION;
+		// 	};
+		// 	half _Outline;
+		// 	fixed4 _OutlineColor;
+		// 	v2f vert (appdata v) {
+		// 		v2f o;
+
+		// 		float4 pos = mul(UNITY_MATRIX_MV, v.vertex); 
+		// 		float3 normal = mul((float3x3)UNITY_MATRIX_IT_MV, v.normal);  
+		// 		normal.z = -0.5;
+		// 		pos = pos + float4(normalize(normal), 0) * _Outline;
+		// 		o.vertex = mul(UNITY_MATRIX_P, pos);
+
+		// 		return o;
+		// 	}
+
+		// 	float4 frag(v2f i) : SV_Target { 
+		// 		return float4(_OutlineColor.rgb, 1);               
+		// 	}
+		// 	ENDCG
+		// }
+
+
+
 	}
 }
