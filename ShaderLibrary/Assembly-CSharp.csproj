@@ -54,15 +54,26 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\AnimeGirlAnimations_free\Script\AGIAFree_sample.cs" />
+     <Compile Include="Assets\SD_Character\Scripts\SampleAnimation.cs" />
+     <Compile Include="Assets\SD_Character\Scripts\SpringBone.cs" />
+     <Compile Include="Assets\SD_Character\Scripts\SpringCollider.cs" />
+     <Compile Include="Assets\SD_Character\Scripts\SpringManager.cs" />
+     <None Include="Assets\SD_Character\ReadMe.files\colorschememapping.xml" />
      <None Include="Assets\Shader\Shader Tutorial\Chapter 6\Specular Pixel-Level (Phong Light Model).shader" />
      <None Include="Assets\Shader\Shader Tutorial\Chapter 14\ToonShading.shader" />
      <None Include="Assets\Shader\Shader Tutorial\Chapter 6\Per-Vertex Shading (Grouraud Shading).shader" />
      <None Include="Assets\Shader\Shader Tutorial\Chapter 6\Per-Pixel Shading (Half Lambert).shader" />
      <None Include="Assets\Shader\Shader Tutorial\Chapter 6\Blinn-Phong UseBuildInFunction.shader" />
+     <None Include="Assets\SD_Character\ReadMe.files\props007.xml" />
+     <None Include="Assets\Shader\Shader Tutorial\Chapter 14\Toon.shader" />
+     <None Include="Assets\Shader\Shader Tutorial\Chapter 14\ToonShadingSpecular.shader" />
      <None Include="Assets\Shader\Shader Tutorial\Chapter 6\Per-Pixel Shading (Phong Shading).shader" />
      <None Include="Assets\Shader\Shader Tutorial\Chapter 6\Specular Vertex-Level.shader" />
+     <None Include="Assets\SD_Character\ReadMe.files\item0006.xml" />
      <None Include="Assets\Shader\Shader Tutorial\Chapter 6\Unlit_Nothing.shader" />
+     <None Include="Assets\Shader\Shader Tutorial\Chapter 14\ToonShadingSimple.shader" />
      <None Include="Assets\AnimeGirlAnimations_free\Readme.txt" />
+     <None Include="Assets\SD_Character\ReadMe.files\filelist.xml" />
      <None Include="Assets\Shader\Shader Tutorial\Chapter 6\Blinn-Phong.shader" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>D:/GitHub/ShaderLibrary/ShaderLibrary/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>

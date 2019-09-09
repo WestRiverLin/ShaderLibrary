@@ -2,6 +2,7 @@
 {
 	Properties
 	{
+		[Header(Main)]
 		_MainTex ("Texture", 2D) = "white" {}
 		_Color ("Color", Color) = (1.0, 1.0, 1.0, 1.0)
 		_SpecularColor ("SpecularColor", Color) = (1.0, 1.0, 1.0, 1.0)
@@ -14,8 +15,8 @@
 		_Softness ("Softness", Range(0.0, 3.0)) = 1.0
 		_SpecularScale("SpecularScale", Range(0.0, 0.1)) = 0.005
 		_AmbientStrength ("AmbientStrength", Range(0.0, 1.0)) = 0.0
-
-		_Outline ("Outline", Range(0.0, 0.01)) = 0.01
+		[Header(Outline)]
+		_OutlineWidth ("Outline", Range(0.0, 0.01)) = 0.01
 		_OutlineColor ("OutlineColor", Color) = (0.0, 0.0, 0.0, 1.0)
 	}
 	SubShader
@@ -62,11 +63,11 @@
 			fixed _ShadowThreshold;
 			fixed _ShadowBrightness;
 			fixed _RimThreshold;
-			fixed _AmbientStrength;
 			half _RimPower;
 			fixed _Seep;
 			fixed _Softness;
 			fixed _SpecularScale;
+			fixed _AmbientStrength;
 			
 			v2f vert (appdata v)
 			{
@@ -139,7 +140,7 @@
 		// 		UNITY_FOG_COORDS(3)
 		// 		float4 vertex : SV_POSITION;
 		// 	};
-		// 	half _Outline;
+		// 	half _OutlineWidth;
 		// 	fixed4 _OutlineColor;
 		// 	v2f vert (appdata v) {
 		// 		v2f o;
@@ -147,7 +148,7 @@
 		// 		float4 pos = mul(UNITY_MATRIX_MV, v.vertex); 
 		// 		float3 normal = mul((float3x3)UNITY_MATRIX_IT_MV, v.normal);  
 		// 		normal.z = -0.5;
-		// 		pos = pos + float4(normalize(normal), 0) * _Outline;
+		// 		pos = pos + float4(normalize(normal), 0) * _OutlineWidth;
 		// 		o.vertex = mul(UNITY_MATRIX_P, pos);
 
 		// 		return o;
